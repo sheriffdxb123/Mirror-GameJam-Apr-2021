@@ -19,12 +19,14 @@ public class Movement : MonoBehaviour
 
 	Rigidbody m_Rigidbody;
 
+	public Color color; 
 
 	Vector3 targetPosition;
 	Vector3 startPosition;
 	bool moving;
+	MeshRenderer cubeRenderer;
 
-	private void Start()
+    private void Start()
 	{
 		m_Rigidbody = GetComponent<Rigidbody>();
 	}
@@ -88,10 +90,12 @@ public class Movement : MonoBehaviour
 
 	public void OnCollisionStay(Collision collision)
 	{
-		if (collision.gameObject.tag == "Finish")
+		if (collision.gameObject.tag == "Home1")
 		{
-			moving = false;
-			m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+			/*moving = false;
+			m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;*/
+			//cubeRenderer.material.SetColor("color", color); 
+
 		}
 	}
 	bool CanMove(Vector3 direction)

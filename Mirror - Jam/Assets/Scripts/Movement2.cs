@@ -86,14 +86,14 @@ public class Movement2 : MonoBehaviour
 				
 	}
 
-    public void OnCollisionStay(Collision collision)
+   /* public void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Finish")
         {
 			moving = false;
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
 		}
-    }
+    }*/
     bool CanMove(Vector3 direction)
 	{
 		if (Vector3.Equals(Vector3.forward, direction) || Vector3.Equals(Vector3.back, direction))

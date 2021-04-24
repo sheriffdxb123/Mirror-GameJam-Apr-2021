@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - P2
+  - P1
+  - Home1
+  - Home2
   layers:
   - Default
   - TransparentFX
