@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96330856267b4164ca6a9ddc4ba71a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myColor: {r: 1, g: 0.40784317, b: 0.30980393, a: 0}
+  material: {fileID: 2100000, guid: 88e0bb38ab08ea346a3b92e2b7c3e66a, type: 2}
+  x: {fileID: 533814790}
 --- !u!1001 &136862893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -805,6 +806,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
+--- !u!1 &533814790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6595319163603844810, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
+  m_PrefabInstance: {fileID: 728444117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &533814791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533814790}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad95fc1dea52384585b7dac69087e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {fileID: 2100000, guid: 88e0bb38ab08ea346a3b92e2b7c3e66a, type: 2}
+--- !u!1 &553589857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6595319163603844810, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
+  m_PrefabInstance: {fileID: 1460553010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &553589866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553589857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7334d868c8bd141ba92d73197362d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 5ccd561f5ee92cd47a8d9e9d60385547, type: 2}
 --- !u!1001 &655519788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1489,7 +1526,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

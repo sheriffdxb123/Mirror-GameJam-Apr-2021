@@ -6,7 +6,7 @@ public class ColorChange2 : MonoBehaviour
 {
     public Material material;
     Renderer rend;
-    
+    GameObject x;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,7 @@ public class ColorChange2 : MonoBehaviour
         if (collision.gameObject.tag == "P2")
         {
             rend.sharedMaterial = material;
+            
         }
 
     }
