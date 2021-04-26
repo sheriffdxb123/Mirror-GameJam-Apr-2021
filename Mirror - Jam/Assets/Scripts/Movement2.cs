@@ -17,8 +17,11 @@ public class Movement2 : MonoBehaviour
 	[SerializeField]
 	float er = 2.67f;
 
-	Rigidbody m_Rigidbody;
+	public float t;
+	public float t1;
 
+	Rigidbody m_Rigidbody;
+	public Animator animGreen; 
 
 	Vector3 targetPosition;
 	Vector3 startPosition;
@@ -27,6 +30,7 @@ public class Movement2 : MonoBehaviour
     private void Start()
     {
 		m_Rigidbody = GetComponent<Rigidbody>();
+		animGreen.enabled = false; 
 	}
     void Update()
 	{
@@ -86,15 +90,32 @@ public class Movement2 : MonoBehaviour
 				
 	}
 
-   /* public void OnCollisionStay(Collision collision)
+    public void OnCollisionStay(UnityEngine.Collision collision)
     {
-        if (collision.gameObject.tag == "Finish")
+        if (collision.gameObject.tag == "Green")
         {
-			moving = false;
-			m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+			StartCoroutine(freezeLate(t));
+			StartCoroutine(MoveDown(t1));
+
 		}
-    }*/
-    bool CanMove(Vector3 direction)
+    }
+	IEnumerator freezeLate(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+		moving = false;
+		m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
+		m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
+		
+	}
+
+	IEnumerator MoveDown(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+		
+		animGreen.enabled = true;
+		
+	}
+	bool CanMove(Vector3 direction)
 	{
 		if (Vector3.Equals(Vector3.forward, direction) || Vector3.Equals(Vector3.back, direction))
 		{

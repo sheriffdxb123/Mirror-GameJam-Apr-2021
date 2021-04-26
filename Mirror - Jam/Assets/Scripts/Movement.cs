@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Movement : MonoBehaviour
 	float rayOffsetZ = 0.5f;
 	[SerializeField]
 	float er = 1.67f;
-
+	public float t;
 	Rigidbody m_Rigidbody;
 
 	public Color color; 
@@ -25,10 +26,14 @@ public class Movement : MonoBehaviour
 	Vector3 startPosition;
 	bool moving;
 	MeshRenderer cubeRenderer;
+	public Animator P1anim;
+	public int index;
 
     private void Start()
 	{
 		m_Rigidbody = GetComponent<Rigidbody>();
+		P1anim.enabled = false;
+		
 	}
 	void Update()
 	{
@@ -44,6 +49,9 @@ public class Movement : MonoBehaviour
 			transform.position += (targetPosition - startPosition) * moveSpeed * Time.deltaTime;
 			return;
 		}
+
+		
+
 
 		Debug.DrawLine(transform.position + Vector3.up * rayOffsetY + Vector3.right * rayOffsetX, transform.position + Vector3.up * rayOffsetY + Vector3.right * rayOffsetX + Vector3.forward * rayLength, Color.red, Time.deltaTime);
 		Debug.DrawLine(transform.position + Vector3.up * rayOffsetY - Vector3.right * rayOffsetX, transform.position + Vector3.up * rayOffsetY - Vector3.right * rayOffsetX + Vector3.forward * rayLength, Color.red, Time.deltaTime);
@@ -88,17 +96,22 @@ public class Movement : MonoBehaviour
 
 	}
 
-	public void OnCollisionStay(Collision collision)
+	private void OnCollisionEnter(UnityEngine.Collision collision)
 	{
-		if (collision.gameObject.tag == "Home1")
+		if (collision.gameObject.tag == "P2")
 		{
-			/*moving = false;
-			m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;*/
-			//cubeRenderer.material.SetColor("color", color); 
-
+			//P1anim.enabled = true;
+			StartCoroutine(WaitForIt(t));
 		}
+
 	}
-	bool CanMove(Vector3 direction)
+	IEnumerator WaitForIt(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+		SceneManager.LoadScene(index);
+		//hello
+	}
+		bool CanMove(Vector3 direction)
 	{
 		if (Vector3.Equals(Vector3.forward, direction) || Vector3.Equals(Vector3.back, direction))
 		{

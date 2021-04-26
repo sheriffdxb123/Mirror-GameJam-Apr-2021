@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,25 +8,27 @@ public class colorChange : MonoBehaviour
     public Material material;
     Renderer rend;
     public GameObject x;
-    public Animation Anim;
+    public bool d;
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<Renderer>();
         rend.enabled = true;
-        Anim.enabled = false;     
-
+        d = false;
+        anim.enabled = false;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(UnityEngine.Collision collision)
     {
-        if (collision.gameObject.tag == "P1")
+        if(collision.gameObject.tag == "P1")
         {
             rend.sharedMaterial = material;
-            // x.transform.localScale = new Vector3(4f, 1, 1);
-            Anim.enabled = true;
+            d = true;
+            anim.enabled = true;
+            //Debug.Log("Hit!");
         }
-
     }
 
 }

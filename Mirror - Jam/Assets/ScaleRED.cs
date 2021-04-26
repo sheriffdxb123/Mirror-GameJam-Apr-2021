@@ -4,25 +4,15 @@ using UnityEngine;
 
 public class ScaleRED : MonoBehaviour
 {
-    GameObject m_Cubes;
-    public Material color;
-    Vector3 ScaleChange;
-    // Start is called before the first frame update
-    void Start()
+    
+    public colorChange CC;
+   
+    public void Update()
     {
-       
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        ScaleChange = new Vector3(3.3184f,1,1);
-
-        if (m_Cubes.GetComponent<Renderer>().material == color)
+        if (CC.d)
         {
-            transform.localScale = ScaleChange;
+            //transform.localScale = new Vector3(transform.localScale.x)
+           // Debug.Log("hello");
         }
-
     }
-}
+}   

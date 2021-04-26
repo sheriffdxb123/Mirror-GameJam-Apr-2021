@@ -8,6 +8,7 @@ TagManager:
   - P1
   - Home1
   - Home2
+  - Green
   layers:
   - Default
   - TransparentFX
