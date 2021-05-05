@@ -19,6 +19,9 @@ public class Movement2 : MonoBehaviour
 
 	public float t;
 	public float t1;
+	public float s;
+
+	public Rewind2 RE;
 
 	Rigidbody m_Rigidbody;
 	public Animator animGreen; 
@@ -26,14 +29,18 @@ public class Movement2 : MonoBehaviour
 	Vector3 targetPosition;
 	Vector3 startPosition;
 	bool moving;
+	bool move;
 
     private void Start()
     {
 		m_Rigidbody = GetComponent<Rigidbody>();
-		animGreen.enabled = false; 
+		animGreen.enabled = false;
+		move = true;
+		moving = false;
 	}
     void Update()
 	{
+		StartCoroutine(something(s));
 		if (moving)
 		{
 			if (Vector3.Distance(startPosition, transform.position) > 1f)
@@ -87,22 +94,30 @@ public class Movement2 : MonoBehaviour
 				moving = true;
 			}
 		}
-				
+
+		if (RE.ff)
+		{
+			//moving = true;
+			m_Rigidbody.constraints = RigidbodyConstraints.None;
+
+		}
+		 
 	}
 
-    public void OnCollisionStay(UnityEngine.Collision collision)
+	public void OnCollisionStay(UnityEngine.Collision collision)
     {
         if (collision.gameObject.tag == "Green")
         {
 			StartCoroutine(freezeLate(t));
 			StartCoroutine(MoveDown(t1));
-
 		}
     }
-	IEnumerator freezeLate(float waitTime)
+ 
+    IEnumerator freezeLate(float waitTime)
 	{
 		yield return new WaitForSeconds(waitTime);
-		moving = false;
+		//moving = false;
+		//Move();
 		m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
 		m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
 		
@@ -113,8 +128,25 @@ public class Movement2 : MonoBehaviour
 		yield return new WaitForSeconds(waitTime);
 		
 		animGreen.enabled = true;
-		
+		/*if (RE.zz)
+		{
+			moving = true;
+			m_Rigidbody.constraints = RigidbodyConstraints.None;
+
+		}*/
 	}
+	IEnumerator something(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+				
+		/*if (RE.zz)
+		{
+			moving = true;
+			m_Rigidbody.constraints = RigidbodyConstraints.None;
+
+		}*/
+	}
+
 	bool CanMove(Vector3 direction)
 	{
 		if (Vector3.Equals(Vector3.forward, direction) || Vector3.Equals(Vector3.back, direction))

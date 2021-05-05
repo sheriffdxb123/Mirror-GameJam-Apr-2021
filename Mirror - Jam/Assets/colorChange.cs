@@ -28,6 +28,7 @@ public class colorChange : MonoBehaviour
             d = true;
             anim.enabled = true;
             //Debug.Log("Hit!");
+            
         }
     }
 

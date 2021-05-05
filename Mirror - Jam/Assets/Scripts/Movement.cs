@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
 	[SerializeField]
 	float er = 1.67f;
 	public float t;
+	public float t1;
 	Rigidbody m_Rigidbody;
 
 	public Color color; 
@@ -28,7 +29,7 @@ public class Movement : MonoBehaviour
 	MeshRenderer cubeRenderer;
 	public Animator P1anim;
 	public int index;
-
+	
     private void Start()
 	{
 		m_Rigidbody = GetComponent<Rigidbody>();
@@ -95,14 +96,32 @@ public class Movement : MonoBehaviour
 		}
 
 	}
+	
 
-	private void OnCollisionEnter(UnityEngine.Collision collision)
+    public void OnCollisionStay(UnityEngine.Collision collision)
 	{
-		if (collision.gameObject.tag == "P2")
+		if (collision.gameObject.tag == "Green")
 		{
-			//P1anim.enabled = true;
-			StartCoroutine(WaitForIt(t));
+			StartCoroutine(freezeLate(t));
+			StartCoroutine(MoveDown(t1));
+
+			
 		}
+	}
+	IEnumerator freezeLate(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+		moving = false;
+		m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
+		m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
+
+	}
+
+	IEnumerator MoveDown(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+
+		P1anim.enabled = true;
 
 	}
 	IEnumerator WaitForIt(float waitTime)
