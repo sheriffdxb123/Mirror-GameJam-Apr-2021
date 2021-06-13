@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
 	public float t;
 	public float t1;
 	Rigidbody m_Rigidbody;
+	public int scenetime; 
 
 	public Color color; 
 
@@ -130,7 +131,14 @@ public class Movement : MonoBehaviour
 		SceneManager.LoadScene(index);
 		//hello
 	}
-		bool CanMove(Vector3 direction)
+    private void OnCollisionEnter(UnityEngine.Collision collision)
+    {
+        if(collision.gameObject.tag == "P2")
+        {
+			StartCoroutine(WaitForIt(scenetime));
+		}
+    }
+    bool CanMove(Vector3 direction)
 	{
 		if (Vector3.Equals(Vector3.forward, direction) || Vector3.Equals(Vector3.back, direction))
 		{

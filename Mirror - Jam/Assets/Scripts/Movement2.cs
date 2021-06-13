@@ -15,7 +15,7 @@ public class Movement2 : MonoBehaviour
 	[SerializeField]
 	float rayOffsetZ = 0.5f;
 	[SerializeField]
-	float er = 2.67f;
+	float er = 1.67f;
 
 	public float t;
 	public float t1;
@@ -116,7 +116,7 @@ public class Movement2 : MonoBehaviour
     IEnumerator freezeLate(float waitTime)
 	{
 		yield return new WaitForSeconds(waitTime);
-		//moving = false;
+		moving = false;
 		//Move();
 		m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
 		m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
