@@ -2178,7 +2178,7 @@ MonoBehaviour:
   scenetime: 1
   color: {r: 1, g: 0.40784317, b: 0.30980393, a: 0}
   P1anim: {fileID: 1507577937}
-  index: 3
+  index: 4
 --- !u!95 &1507577937
 Animator:
   serializedVersion: 3

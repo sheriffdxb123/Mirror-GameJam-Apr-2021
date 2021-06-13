@@ -24,7 +24,8 @@ public class Movement2 : MonoBehaviour
 	public Rewind2 RE;
 
 	Rigidbody m_Rigidbody;
-	public Animator animGreen; 
+	public Animator animGreen;
+	public Animator animGreen2;
 
 	Vector3 targetPosition;
 	Vector3 startPosition;
@@ -35,6 +36,7 @@ public class Movement2 : MonoBehaviour
     {
 		m_Rigidbody = GetComponent<Rigidbody>();
 		animGreen.enabled = false;
+		animGreen2.enabled = false;
 		move = true;
 		moving = false;
 	}
@@ -111,6 +113,13 @@ public class Movement2 : MonoBehaviour
 			StartCoroutine(freezeLate(t));
 			StartCoroutine(MoveDown(t1));
 		}
+
+		if (collision.gameObject.tag == "Green2")
+		{
+			StartCoroutine(freezeLate(t));
+			StartCoroutine(MoveDown2(t1));
+		}
+
 		if (collision.gameObject.tag == "Pink")
         {
 			animGreen.enabled = true;
@@ -141,13 +150,17 @@ public class Movement2 : MonoBehaviour
 		yield return new WaitForSeconds(waitTime);
 		
 		animGreen.enabled = true;
-		/*if (RE.zz)
-		{
-			moving = true;
-			m_Rigidbody.constraints = RigidbodyConstraints.None;
-
-		}*/
+		
 	}
+
+	IEnumerator MoveDown2(float waitTime)
+	{
+		yield return new WaitForSeconds(waitTime);
+
+		animGreen2.enabled = true;
+
+	}
+
 	IEnumerator something(float waitTime)
 	{
 		yield return new WaitForSeconds(waitTime);
