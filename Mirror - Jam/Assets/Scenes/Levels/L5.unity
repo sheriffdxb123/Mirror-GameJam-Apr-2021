@@ -123,6 +123,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10832316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6595319163603844810, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
+  m_PrefabInstance: {fileID: 902469579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &10832317
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10832316}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: affdf4625fe66164283807fb33e10cdd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &28896353 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6595319163603844810, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
@@ -474,6 +498,30 @@ MonoBehaviour:
   x: {fileID: 0}
   d: 0
   anim: {fileID: 858100020}
+--- !u!1 &281692929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6595319163603844810, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
+  m_PrefabInstance: {fileID: 1833502591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &281692938
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281692929}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 750b061c9e427a845b5d3c1fc4070d95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &350656153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -617,6 +665,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6595319163603844807, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
   m_PrefabInstance: {fileID: 745309648}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &465247431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6595319163603844810, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
+  m_PrefabInstance: {fileID: 1241102389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &465247440
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465247431}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86464c39a1511e64a85317df1d1277ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &494041241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1413,7 +1485,8 @@ MonoBehaviour:
   t1: 0.12
   s: 0
   RE: {fileID: 0}
-  animGreen: {fileID: 0}
+  animGreen: {fileID: 465247440}
+  animGreen2: {fileID: 281692938}
 --- !u!65 &992459530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1500,7 +1573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992459528}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.92, y: 1.12, z: 3.87}
+  m_LocalPosition: {x: 2.92, y: 1.12, z: 5.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1794,7 +1867,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6595319163603844807, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.8700004
+      value: 7.87
       objectReference: {fileID: 0}
     - target: {fileID: 6595319163603844807, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2016,7 +2089,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 5ccd561f5ee92cd47a8d9e9d60385547, type: 2}
   x: {fileID: 0}
   d: 0
-  anim: {fileID: 0}
+  anim: {fileID: 10832317}
 --- !u!1 &1349156289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6595319163603844810, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
@@ -2495,7 +2568,7 @@ MonoBehaviour:
   scenetime: 0
   color: {r: 1, g: 0.40784317, b: 0.30980393, a: 0}
   P1anim: {fileID: 1507577937}
-  index: 2
+  index: 4
 --- !u!95 &1507577937
 Animator:
   serializedVersion: 3
@@ -2844,7 +2917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6595319163603844810, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
       propertyPath: m_TagString
-      value: Green
+      value: Green2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a18017c953fd7841b30be343720b8e2, type: 3}
