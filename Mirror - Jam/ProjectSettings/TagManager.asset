@@ -9,6 +9,7 @@ TagManager:
   - Home1
   - Home2
   - Green
+  - Pink
   layers:
   - Default
   - TransparentFX

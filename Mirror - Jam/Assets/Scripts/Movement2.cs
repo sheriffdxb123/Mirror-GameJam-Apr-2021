@@ -111,8 +111,21 @@ public class Movement2 : MonoBehaviour
 			StartCoroutine(freezeLate(t));
 			StartCoroutine(MoveDown(t1));
 		}
-    }
- 
+		if (collision.gameObject.tag == "Pink")
+        {
+			animGreen.enabled = true;
+		}
+	}
+
+   /* public void OnCollisionExit(UnityEngine.Collision collision)
+    {
+		if (collision.gameObject.tag == "Pink")
+        {
+			m_Rigidbody.constraints = RigidbodyConstraints.None;
+		}
+
+	} */
+
     IEnumerator freezeLate(float waitTime)
 	{
 		yield return new WaitForSeconds(waitTime);
